@@ -26,5 +26,9 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'parallel_assignments.App'
+    //mainClass = 'parallel_assignments.App'
+    if (project.hasProperty("mainClass"))
+		mainClass.set(project.getProperty("mainClass"))
+    else
+		System.out.println("INFO: If you are trying to run the program, recall to specify the main class with `-PmainClass=<package>.<java_class>`")
 }
